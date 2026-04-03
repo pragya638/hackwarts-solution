@@ -1,4 +1,117 @@
+/* BODY */
 body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    margin: 0;
+    padding: 20px;
+}
+
+/* TITLE */
+h1 {
     text-align: center;
-    font-family: Arial;
+    color: #1b5e20;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* CARD (GLASS EFFECT) */
+.card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.4);
+
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* INPUTS */
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+}
+
+/* INPUT STYLE */
+input, select {
+    border: none;
+    background: rgba(255,255,255,0.7);
+}
+
+/* BUTTON */
+button {
+    background: linear-gradient(45deg, #2e7d32, #66bb6a);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #1b5e20, #4caf50);
+}
+
+/* BOX (DASHBOARD ITEMS) */
+.box {
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+/* ALERT */
+.alert {
+    background: rgba(255, 243, 205, 0.6);
+    backdrop-filter: blur(8px);
+
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* BADGES (RISK) */
+.badge-low {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.badge-medium {
+    color: #66bb6a;
+    font-weight: bold;
+}
+
+.badge-high {
+    color: #1b5e20;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
 }

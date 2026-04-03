@@ -1,16 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mess AI Predictor</title>
+    <title>Smart Mess System</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Mess Food Prediction System</h1>
-    
-    <button onclick="predict()">Predict Food Demand</button>
-    
-    <p id="result"></p>
 
-    <script src="script.js"></script>
+<body>
+
+<h1>🍽️ Smart Mess System</h1>
+<p class="tagline">AI-powered meal prediction & waste reduction system</p>
+
+<div class="alert glass" id="alertBox">Loading alert...</div>
+
+<div class="container">
+
+    <!-- BOOK MEAL -->
+    <div class="card glass">
+        <h3>👨‍🎓 Book Meal</h3>
+
+        <input id="name" placeholder="Student Name">
+        <input id="id" placeholder="Student ID">
+
+        <select id="meal">
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+        </select>
+
+        <input type="date" id="date">
+
+        <button onclick="bookMeal()">Book Meal</button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="card glass">
+        <h3>📊 Smart Dashboard</h3>
+
+        <button onclick="loadDashboard()">Analyze with AI</button>
+
+        <p id="loading" class="loading"></p>
+
+        <div class="grid">
+
+            <div class="box glass">
+                <h4>📊 Prediction</h4>
+                <p id="prediction">--</p>
+            </div>
+
+            <div class="box glass">
+                <h4>⚠️ Waste</h4>
+                <p id="waste">--</p>
+                <div class="progress-bar">
+                    <div id="wasteBar"></div>
+                </div>
+            </div>
+
+            <div class="box glass" id="riskCard">
+                <h4>🔥 Risk</h4>
+                <p id="risk">--</p>
+            </div>
+
+            <div class="box glass">
+                <h4>💡 Suggestion</h4>
+                <p id="suggestion">--</p>
+            </div>
+
+            <div class="box glass full">
+                <h4>🍽 Meal Summary</h4>
+                <p id="summary">--</p>
+            </div>
+
+            <div class="box glass full">
+                <h4>🧠 AI Insight</h4>
+                <p id="trend">--</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
