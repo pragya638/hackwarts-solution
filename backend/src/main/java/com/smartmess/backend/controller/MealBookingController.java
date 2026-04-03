@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -57,14 +58,25 @@ public class MealBookingController {
 
     @GetMapping("/prediction")
     public long predictMeals(@RequestParam String mealType) {
-        return service.predict(mealType);
+        return service.predict(mealType, null);
     }
     @GetMapping("/waste")
 public long getWaste(@RequestParam String mealType) {
-    return service.calculateWaste(mealType);
+    return service.calculateWaste(mealType, null);
 }
 @GetMapping("/total")
 public long getTotalBookings() {
     return service.getTotalBookings();
+}
+@GetMapping("/admin-dashboard")
+public Map<String, Object> adminDashboard(@RequestParam String date) {
+    return service.getAdminDashboard(LocalDate.parse(date));
+}
+@GetMapping("/smart-suggestion")
+public String smartSuggestion(
+        @RequestParam String mealType,
+        @RequestParam String date
+) {
+    return service.getSmartSuggestion(mealType, LocalDate.parse(date));
 }
 }
