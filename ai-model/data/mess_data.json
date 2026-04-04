@@ -1,0 +1,7 @@
+[
+  {"day": "Monday", "is_holiday": 0, "weather": "hot"},
+  {"day": "Tuesday", "is_holiday": 0, "weather": "normal"},
+  {"day": "Wednesday", "is_holiday": 0, "weather": "rainy"},
+  {"day": "Sunday", "is_holiday": 1, "weather": "normal"},
+  {"day": "Saturday", "is_holiday": 0, "weather": "hot"}
+]
