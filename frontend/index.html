@@ -1,87 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Smart Mess System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>🍽️ Smart Mess System</h1>
-<p class="tagline">AI-powered meal prediction & waste reduction system</p>
+    <h1>🍽️ Smart Mess System</h1>
+    <p class="tagline">AI-powered meal prediction & waste reduction system</p>
 
-<div class="alert glass" id="alertBox">Loading alert...</div>
+    <div class="container">
 
-<div class="container">
+        <!-- BOOK MEAL -->
+        <div class="card">
+            <h3>⏳ Book Meal</h3>
 
-    <!-- BOOK MEAL -->
-    <div class="card glass">
-        <h3>👨‍🎓 Book Meal</h3>
+            <input id="studentName" placeholder="Student Name">
+            <input id="studentId" placeholder="Student ID">
 
-        <input id="name" placeholder="Student Name">
-        <input id="id" placeholder="Student ID">
+            <select id="mealType">
+                <option>Breakfast</option>
+                <option>Lunch</option>
+                <option>Dinner</option>
+            </select>
 
-        <select id="meal">
-            <option>Breakfast</option>
-            <option>Lunch</option>
-            <option>Dinner</option>
-        </select>
+            <input id="date" type="date">
 
-        <input type="date" id="date">
+            <button onclick="bookMeal()">Book Meal</button>
+        </div>
 
-        <button onclick="bookMeal()">Book Meal</button>
-    </div>
+        <!-- DASHBOARD -->
+        <div class="card">
+            <h3>📊 Smart Dashboard</h3>
 
-    <!-- DASHBOARD -->
-    <div class="card glass">
-        <h3>📊 Smart Dashboard</h3>
+            <!-- hidden inputs for AI -->
+            <select id="day" style="display:none;">
+                <option value="Monday">Monday</option>
+            </select>
 
-        <button onclick="loadDashboard()">Analyze with AI</button>
+            <select id="weather" style="display:none;">
+                <option value="hot">Hot</option>
+            </select>
 
-        <p id="loading" class="loading"></p>
+            <select id="holiday" style="display:none;">
+                <option value="0">No</option>
+            </select>
 
-        <div class="grid">
+            <button class="analyze-btn" onclick="getPrediction()">Analyze with AI</button>
 
-            <div class="box glass">
-                <h4>📊 Prediction</h4>
-                <p id="prediction">--</p>
-            </div>
-
-            <div class="box glass">
-                <h4>⚠️ Waste</h4>
-                <p id="waste">--</p>
-                <div class="progress-bar">
-                    <div id="wasteBar"></div>
-                </div>
-            </div>
-
-            <div class="box glass" id="riskCard">
-                <h4>🔥 Risk</h4>
-                <p id="risk">--</p>
-            </div>
-
-            <div class="box glass">
-                <h4>💡 Suggestion</h4>
-                <p id="suggestion">--</p>
-            </div>
-
-            <div class="box glass full">
-                <h4>🍽 Meal Summary</h4>
-                <p id="summary">--</p>
-            </div>
-
-            <div class="box glass full">
-                <h4>🧠 AI Insight</h4>
-                <p id="trend">--</p>
-            </div>
-
+            <div class="box"><b>Prediction:</b> <span id="prediction">-</span></div>
+            <div class="box"><b>Waste:</b> <span id="waste">-</span></div>
+            <div class="box"><b>Risk:</b> <span id="risk">-</span></div>
+            <div class="box"><b>Suggestion:</b> <span id="suggestion">-</span></div>
+            <div class="box"><b>Meal Summary:</b> <span id="menu">-</span></div>
+            <div class="box"><b>Trend:</b> <span id="trend">-</span></div>
         </div>
 
     </div>
 
-</div>
-
-<script src="script.js"></script>
+    <!-- JS LINK -->
+    <script src="script.js"></script>
 
 </body>
 </html>

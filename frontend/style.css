@@ -1,7 +1,6 @@
-/* BODY */
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
     margin: 0;
     padding: 20px;
 }
@@ -9,109 +8,67 @@ body {
 /* TITLE */
 h1 {
     text-align: center;
-    color: #1b5e20;
+    color: #2e7d32;
+}
+
+.tagline {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
 }
 
 /* CONTAINER */
 .container {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
-/* CARD (GLASS EFFECT) */
+/* CARD */
 .card {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.4);
-
+    background: #ffffff;
     padding: 20px;
     border-radius: 15px;
     width: 320px;
-
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-}
-
-/* INPUTS */
-input, select, button {
+/* INPUT */
+input, select {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
     border-radius: 10px;
-}
-
-/* INPUT STYLE */
-input, select {
-    border: none;
-    background: rgba(255,255,255,0.7);
+    border: 1px solid #ddd;
 }
 
 /* BUTTON */
 button {
-    background: linear-gradient(45deg, #2e7d32, #66bb6a);
+    width: 100%;
+    padding: 10px;
+    background: #2e7d32;
     color: white;
     border: none;
-    cursor: pointer;
+    border-radius: 10px;
     font-weight: bold;
-    transition: 0.3s;
+    cursor: pointer;
 }
 
 button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #1b5e20, #4caf50);
+    background: #1b5e20;
 }
 
-/* BOX (DASHBOARD ITEMS) */
+/* ANALYZE BUTTON */
+.analyze-btn {
+    background: #0a8f08;
+    margin-bottom: 10px;
+}
+
+/* BOX */
 .box {
-    background: rgba(255,255,255,0.3);
-    backdrop-filter: blur(10px);
-
-    padding: 12px;
-    margin-top: 10px;
-    border-radius: 12px;
-}
-
-/* ALERT */
-.alert {
-    background: rgba(255, 243, 205, 0.6);
-    backdrop-filter: blur(8px);
-
+    background: #f5f5f5;
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-/* BADGES (RISK) */
-.badge-low {
-    color: #2e7d32;
-    font-weight: bold;
-}
-
-.badge-medium {
-    color: #66bb6a;
-    font-weight: bold;
-}
-
-.badge-high {
-    color: #1b5e20;
-    font-weight: bold;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-    }
+    margin-top: 8px;
 }
