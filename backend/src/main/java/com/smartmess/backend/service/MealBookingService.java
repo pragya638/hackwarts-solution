@@ -13,9 +13,11 @@ import java.util.Map;
 public class MealBookingService {
 
     private final MealBookingRepository repository;
+        private final AiService aiService;
 
     public MealBookingService(MealBookingRepository repository) {
         this.repository = repository;
+        this.aiService = new AiService();
     }
 
     // ================= SAVE =================
@@ -129,13 +131,21 @@ public class MealBookingService {
         mealSummary.put("dinner", repository.countByDateAndMealTypeAndStatus(date, "Dinner", "Booked"));
 
         // Prediction
-        long prediction = predict("Breakfast", date);
+       // ================= AI CALL =================
+Map<String, Object> inputMap = new HashMap<>();
+inputMap.put("day", date.getDayOfWeek().toString());
+inputMap.put("is_holiday", 0); // you can improve later
+inputMap.put("weather", "normal"); // later dynamic
 
+Map<String, Object> aiResponse = aiService.callPythonAI(inputMap);
+
+int prediction = ((Number) aiResponse.get("predicted_students")).intValue();
         // Waste
-        long waste = calculateWaste("Breakfast", date);
+       long mealTotal = repository.countByDateAndMealTypeAndStatus(date, "Breakfast", "Booked");
 
-        long mealTotal = repository.countByDateAndMealTypeAndStatus(date, "Breakfast", "Booked");
+long waste = Math.max(mealTotal - prediction, 0);
 
+      
         double wastePercentage = mealTotal == 0 ? 0 : (waste * 100.0 / mealTotal);
 
         Map<String, Object> wasteData = new HashMap<>();

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Mess System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🍽️ Smart Mess System</h1>
+    <p class="tagline">AI-powered meal prediction & waste reduction system</p>
+
+    <div class="container">
+
+        <!-- BOOK MEAL -->
+        <div class="card">
+            <h3>⏳ Book Meal</h3>
+
+            <input id="studentName" placeholder="Student Name">
+            <input id="studentId" placeholder="Student ID">
+
+            <select id="mealType">
+                <option>Breakfast</option>
+                <option>Lunch</option>
+                <option>Dinner</option>
+            </select>
+
+            <input id="date" type="date">
+
+            <button onclick="bookMeal()">Book Meal</button>
+        </div>
+
+        <!-- DASHBOARD -->
+        <div class="card">
+            <h3>📊 Smart Dashboard</h3>
+
+            <!-- hidden inputs for AI -->
+            <select id="day" style="display:none;">
+                <option value="Monday">Monday</option>
+            </select>
+
+            <select id="weather" style="display:none;">
+                <option value="hot">Hot</option>
+            </select>
+
+            <select id="holiday" style="display:none;">
+                <option value="0">No</option>
+            </select>
+
+            <button class="analyze-btn" onclick="getPrediction()">Analyze with AI</button>
+
+            <div class="box"><b>Prediction:</b> <span id="prediction">-</span></div>
+            <div class="box"><b>Waste:</b> <span id="waste">-</span></div>
+            <div class="box"><b>Risk:</b> <span id="risk">-</span></div>
+            <div class="box"><b>Suggestion:</b> <span id="suggestion">-</span></div>
+            <div class="box"><b>Meal Summary:</b> <span id="menu">-</span></div>
+            <div class="box"><b>Trend:</b> <span id="trend">-</span></div>
+        </div>
+
+    </div>
+
+    <!-- JS LINK -->
+    <script src="script.js"></script>
+
+</body>
+</html>

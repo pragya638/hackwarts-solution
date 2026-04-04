@@ -1,8 +1,11 @@
 package com.smartmess.backend.controller;
 
+import com.smartmess.backend.dto.PredictionRequest;
 import com.smartmess.backend.model.MealBooking;
+import com.smartmess.backend.service.AiService;
 import com.smartmess.backend.service.MealBookingService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -15,6 +18,12 @@ import java.util.Map;
 public class MealBookingController {
 
     private final MealBookingService service;
+
+
+    @Autowired
+    private AiService aiService;
+
+    
 
     public MealBookingController(MealBookingService service) {
         this.service = service;
@@ -78,5 +87,10 @@ public String smartSuggestion(
         @RequestParam String date
 ) {
     return service.getSmartSuggestion(mealType, LocalDate.parse(date));
+}
+
+@PostMapping("/predict")
+public Map<String, Object> predict(@RequestBody Map<String, Object> request) {
+    return aiService.callPythonAI(request);
 }
 }
