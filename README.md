@@ -45,7 +45,11 @@ College mess systems rely on guesswork for food preparation, leading to:
 
 ## 📁 Project Structure
 ---
-
+Hackwarts-Solution/
+├── backend/          → Spring Boot REST APIs
+│   └── src/main/resources/static/  → Frontend served by Spring Boot
+├── frontend/         → UI source files
+└── ai-model/         → Python Flask ML prediction model
 ## 🔧 How to Run
 
 ### Step 1: Start Flask AI Model
