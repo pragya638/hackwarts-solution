@@ -36,9 +36,13 @@ College mess systems rely on guesswork for food preparation, leading to:
 | Layer | Technology |
 |---|---|
 | Backend | Java, Spring Boot |
+
 | Frontend | HTML, CSS, JavaScript |
+
 | Database | MySQL |
+
 | AI/ML Model | Python, Flask |
+
 | Version Control | Git, GitHub |
 
 ---
