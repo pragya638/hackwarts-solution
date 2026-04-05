@@ -28,7 +28,7 @@ College mess systems rely on guesswork for food preparation, leading to:
 - 🤖 **AI Demand Prediction** — Flask ML model predicts daily footfall
 - 📊 **Admin Dashboard** — Real-time waste, risk level & suggestions
 - ⭐ **Student Feedback** — Rating & comment system with summary
-- 📈 **Trend Analysis** — Booking trends over time
+  
 
 ---
 
