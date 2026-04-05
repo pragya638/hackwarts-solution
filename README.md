@@ -36,24 +36,34 @@ College mess systems rely on guesswork for food preparation, leading to:
 | Layer | Technology |
 |---|---|
 | Backend | Java, Spring Boot |
-
 | Frontend | HTML, CSS, JavaScript |
-
 | Database | MySQL |
-
 | AI/ML Model | Python, Flask |
-
 | Version Control | Git, GitHub |
 
 ---
 
 ## 📁 Project Structure
----
+```
 Hackwarts-Solution/
-├── backend/          → Spring Boot REST APIs
-│   └── src/main/resources/static/  → Frontend served by Spring Boot
-├── frontend/         → UI source files
-└── ai-model/         → Python Flask ML prediction model
+├── ai-model/
+│   └── app.py              → Python Flask ML Model
+├── backend/
+│   └── src/main/
+│       ├── java/com/smartmess/
+│       │   ├── controller/ → REST APIs
+│       │   ├── model/      → MealBooking Entity
+│       │   ├── repository/ → Database Layer
+│       │   └── service/    → Business Logic
+│       └── resources/
+│           ├── static/     → Frontend (HTML, CSS, JS)
+│           └── application.properties
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+└── README.md
+```
 ## 🔧 How to Run
 
 ### Step 1: Start Flask AI Model
